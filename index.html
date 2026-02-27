@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poda Bites | Baked Tradition Delivered with Love</title>
+    <meta name="description" content="Order authentic caramelized baked Indian dessert from Poda Bites. Classic, Dry Fruit and Chocolate Poda delivered across India.">
+    <meta name="keywords" content="Poda Bites, Indian dessert, Chhena Poda, baked dessert, online order">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <!-- Razorpay checkout script -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js" defer></script>
+</head>
+<body>
+
+<!-- Sticky Order Bar -->
+<div id="sticky-order-bar" class="sticky-order-bar">
+    <div class="sticky-content">
+        <span class="sticky-text">Ready to order?</span>
+        <a href="#products" class="btn btn-lg" style="padding:12px 32px;font-size:1rem;">🛍️ Order Now</a>
+        <a href="https://wa.me/919876543210" target="_blank" class="btn btn-ghost" style="padding:12px 32px;font-size:1rem;">💬 WhatsApp</a>
+    </div>
+</div>
+
+<nav class="navbar">
+    <div class="container">
+        <div class="logo">Poda Bites</div>
+        <div class="menu-toggle" aria-expanded="false" onclick="toggleMenu()">☰</div>
+        <div class="nav-links" id="navLinks">
+            <a href="#">🏠 Home</a>
+            <a href="#products">🛍️ Products</a>
+            <a href="#about">📖 About</a>
+            <a href="#contact">✉️ Contact</a>
+            <button id="orders-trigger" style="padding:8px 14px;font-size:0.9rem;border:none;background:rgba(255,255,255,0.1);color:#fff;cursor:pointer;border-radius:8px;transition:all .25s ease;">📜 Order History</button>
+            <button id="cart-trigger" style="padding:8px 14px;font-size:0.9rem;border:none;background:rgba(255,255,255,0.1);color:#fff;cursor:pointer;border-radius:8px;transition:all .25s ease;position:relative;">🛒 Cart <span id="cart-count" style="position:absolute;top:-8px;right:-8px;background:#ff6b6b;color:#fff;border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:900;">0</span></button>
+            <button id="admin-trigger" style="padding:8px 14px;font-size:0.9rem;border:none;background:rgba(255,255,255,0.1);color:#fff;cursor:pointer;border-radius:8px;transition:all .25s ease;display:none;" title="Admin Panel">⚙️ Admin</button>
+            <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+            <!-- Quick Features inside menu -->
+            <div class="menu-features">
+                <div class="menu-feature-item">
+                    <span class="feature-icon">📱</span>
+                    <span class="feature-text">Order Now</span>
+                    <span class="feature-desc">Quick WhatsApp/Online</span>
+                </div>
+                <div class="menu-feature-item">
+                    <span class="feature-icon">🛍️</span>
+                    <span class="feature-text">Explore Flavours</span>
+                    <span class="feature-desc">Premium varieties</span>
+                </div>
+                <div class="menu-feature-item">
+                    <span class="feature-icon">🌿</span>
+                    <span class="feature-text">Shop Fresh</span>
+                    <span class="feature-desc">Handcrafted daily</span>
+                </div>
+                <div class="menu-feature-item">
+                    <span class="feature-icon">🎁</span>
+                    <span class="feature-text">Buy Today</span>
+                    <span class="feature-desc">Fast Delivery</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<header class="hero animate fade-left">
+    <div class="hero-background">
+        <div class="hero-blob hero-blob-1"></div>
+        <div class="hero-blob hero-blob-2"></div>
+    </div>
+    <div class="container hero-content">
+        <div class="hero-badge">🥇 India's Finest Poda</div>
+        <h1 class="hero-title">Poda Bites</h1>
+        <p class="hero-subtitle">Baked Tradition. Delivered with Love.</p>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-number">10K+</span>
+                <span class="stat-label">Happy Customers</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">5★</span>
+                <span class="stat-label">Rated Premium</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">24hrs</span>
+                <span class="stat-label">Fresh Delivery</span>
+            </div>
+        </div>
+        <div class="hero-buttons">
+            <a href="#products" class="btn btn-lg">🛍️ Order Now</a>
+            <a href="#faq" class="btn btn-ghost">❓ FAQ</a>
+        </div>
+        <div class="hero-trust">
+            <span>✓ 100% Fresh & Handmade</span>
+            <span>✓ Free Shipping on Orders 500+</span>
+            <span>✓ 48-Hour Money-Back Guarantee</span>
+        </div>
+    </div>
+</header>
+
+<section class="products" id="products">
+    <div class="products-offer-banner">
+        <span class="offer-badge">⏰ LIMITED TIME OFFER</span>
+        <span class="offer-text">Free Shipping on Orders Above ₹500 | Order Now!</span>
+    </div>
+    <div class="container">
+    <h2>Our Flavours</h2>
+    <div class="product-container">
+        <div class="product-card animate fade-left stagger-1" data-product="Classic Poda" data-price="449">
+            <div class="product-badge" style="background:#ff6b6b;">🏆 Bestseller</div>
+            <img src="https://via.placeholder.com/300x200?text=Classic+Poda" alt="Classic Poda" class="product-img">
+            <h3>Classic Poda</h3>
+            <p>Traditional caramelized baked delight crafted with cottage cheese & pure ghee. Authentic taste with perfect texture.</p>
+            <div class="product-meta">
+                <span class="rating">⭐ 4.9/5 (450+ reviews)</span>
+            </div>
+            <div class="price">₹449</div>
+            <div class="product-highlight">Perfect for families • Best seller</div>
+            <div class="quantity-selector">
+                <button class="qty-btn" onclick="updateQty(this, -1)">−</button>
+                <input type="number" value="1" class="qty-input" min="1">
+                <button class="qty-btn" onclick="updateQty(this, 1)">+</button>
+            </div>
+            <div class="card-actions">
+                <button class="btn btn-primary" onclick="addToCart(this)">🛒 Add to Cart</button>
+                <button class="btn btn-secondary">💬 WhatsApp</button>
+            </div>
+        </div>
+        <div class="product-card animate fade-right stagger-2" data-product="Dry Fruit Poda" data-price="499">
+            <div class="product-badge" style="background:#4ecdc4;">✨ Premium</div>
+            <img src="https://via.placeholder.com/300x200?text=Dry+Fruit+Poda" alt="Dry Fruit Poda" class="product-img">
+            <h3>Dry Fruit Poda</h3>
+            <p>Loaded with premium almonds, cashews & dry fruits. Enhanced nutrition with rich, crunchy texture for a premium experience.</p>
+            <div class="product-meta">
+                <span class="rating">⭐ 4.95/5 (380+ reviews)</span>
+            </div>
+            <div class="price">₹499</div>
+            <div class="product-highlight">Premium choice • Rich in nutrition</div>
+            <div class="quantity-selector">
+                <button class="qty-btn" onclick="updateQty(this, -1)">−</button>
+                <input type="number" value="1" class="qty-input" min="1">
+                <button class="qty-btn" onclick="updateQty(this, 1)">+</button>
+            </div>
+            <div class="card-actions">
+                <button class="btn btn-primary" onclick="addToCart(this)">🛒 Add to Cart</button>
+                <button class="btn btn-secondary">💬 WhatsApp</button>
+            </div>
+        </div>
+        <div class="product-card animate fade-left stagger-3" data-product="Chocolate Poda" data-price="529">
+            <div class="product-badge" style="background:#a78bfa;">🎉 New</div>
+            <img src="https://via.placeholder.com/300x200?text=Chocolate+Poda" alt="Chocolate Poda" class="product-img">
+            <h3>Chocolate Poda</h3>
+            <p>Innovative fusion of traditional Poda with rich chocolate flavor. Soft, moist center with gooey chocolate - irresistible!</p>
+            <div class="product-meta">
+                <span class="rating">⭐ 5.0/5 (220+ reviews)</span>
+            </div>
+            <div class="price">₹529</div>
+            <div class="product-highlight">New arrival • Customer favorite</div>
+            <div class="quantity-selector">
+                <button class="qty-btn" onclick="updateQty(this, -1)">−</button>
+                <input type="number" value="1" class="qty-input" min="1">
+                <button class="qty-btn" onclick="updateQty(this, 1)">+</button>
+            </div>
+            <div class="card-actions">
+                <button class="btn btn-primary" onclick="addToCart(this)">🛒 Add to Cart</button>
+                <button class="btn btn-secondary">💬 WhatsApp</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="features-section">
+    <div class="container">
+        <h2>Why Choose Poda Bites?</h2>
+        <div class="features-grid">
+            <div class="feature-card animate fade-left stagger-1">
+                <div class="feature-icon">🍯</div>
+                <h3>100% Handmade</h3>
+                <p>Small-batch crafted daily using traditional recipes. No additives or preservatives.</p>
+            </div>
+            <div class="feature-card animate fade-right stagger-2">
+                <div class="feature-icon">🚚</div>
+                <h3>Fresh Delivery</h3>
+                <p>Delivered fresh within 24 hours of placing order. Shipped in premium packaging.</p>
+            </div>
+            <div class="feature-card animate fade-left stagger-3">
+                <div class="feature-icon">⭐</div>
+                <h3>Premium Quality</h3>
+                <p>Rated 5★ by 10K+ satisfied customers. Authentic taste guaranteed.</p>
+            </div>
+            <div class="feature-card animate fade-right stagger-4">
+                <div class="feature-icon">💚</div>
+                <h3>100% Satisfaction</h3>
+                <p>48-hour money-back guarantee. No questions asked if not satisfied.</p>
+            </div>
+            <div class="feature-card animate fade-left stagger-1">
+                <div class="feature-icon">🌍</div>
+                <h3>Pan-India Delivery</h3>
+                <p>Shipped across India. Free shipping on orders above ₹500.</p>
+            </div>
+            <div class="feature-card animate fade-right stagger-2">
+                <div class="feature-icon">🎁</div>
+                <h3>Perfect for Gifting</h3>
+                <p>Beautiful packaging available. Great for special occasions & corporate gifts.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Ingredients & Benefits Section -->
+<section class="products-details">
+    <div class="container">
+        <h2>What Makes Our Products Special?</h2>
+        <div class="details-grid">
+            <div class="detail-card">
+                <h3>🌾 Premium Ingredients</h3>
+                <ul>
+                    <li>Fresh cottage cheese (chhena)</li>
+                    <li>Organic jaggery for natural sweetness</li>
+                    <li>Pure ghee & milk</li>
+                    <li>Dry fruits (almonds, cashews)</li>
+                    <li>Natural cardamom flavoring</li>
+                </ul>
+            </div>
+            <div class="detail-card">
+                <h3>✨ Health Benefits</h3>
+                <ul>
+                    <li>Rich in protein & calcium</li>
+                    <li>No artificial colors or flavors</li>
+                    <li>Perfect for all age groups</li>
+                    <li>Energy-rich traditional dessert</li>
+                    <li>Great source of natural carbs</li>
+                </ul>
+            </div>
+            <div class="detail-card">
+                <h3>📦 Why Poda Bites?</h3>
+                <ul>
+                    <li>Handcrafted in small batches</li>
+                    <li>Fresh delivered within 24 hours</li>
+                    <li>Authentic Odisha recipe</li>
+                    <li>Premium quality packaging</li>
+                    <li>Direct from maker to you</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About, Contact and Order History sections -->
+<section id="about" class="about animate">
+    <div class="container">
+      <h2>About Our Story</h2>
+      <div class="about-content">
+        <p>Poda Bites is dedicated to preserving the caramelized baked dessert tradition. Started with a passion for authentic taste, we make small-batch, handcrafted treats using only premium ingredients.</p>
+        <p><strong>Our Mission:</strong> Deliver the authentic taste of Odisha to every corner of India, fresh & with love. Every bite is a promise of quality and tradition.</p>
+      </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section id="faq" class="faq-section">
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+            <div class="faq-card animate fade-left stagger-1">
+                <div class="faq-question">❓ How is Poda delivered?</div>
+                <div class="faq-answer">We use premium packaging with temperature-controlled shipping. Your Poda arrives fresh within 24 hours of ordering. Delivery is free on orders above ₹500.</div>
+            </div>
+            <div class="faq-card animate fade-right stagger-2">
+                <div class="faq-question">❓ What's the shelf life?</div>
+                <div class="faq-answer">Our Poda stays fresh for 5-7 days in room temperature and up to 2 weeks in refrigeration. Best enjoyed within 3 days of delivery for optimal taste.</div>
+            </div>
+            <div class="faq-card animate fade-left stagger-3">
+                <div class="faq-question">❓ Is it safe for kids?</div>
+                <div class="faq-answer">Yes! Poda Bites is 100% safe for kids. No artificial additives, colors, or preservatives. Made with natural ingredients. Suitable for all age groups.</div>
+            </div>
+            <div class="faq-card animate fade-right stagger-4">
+                <div class="faq-question">❓ Can I customize orders?</div>
+                <div class="faq-answer">Absolutely! Need a specific quantity or flavor variation? Contact us on WhatsApp for custom orders. We offer bulk discounts for corporate/event orders.</div>
+            </div>
+            <div class="faq-card animate fade-left stagger-1">
+                <div class="faq-question">❓ What if I'm not satisfied?</div>
+                <div class="faq-answer">We offer a 48-hour money-back guarantee. If you're not completely satisfied, just let us know within 48 hours of delivery for a full refund.</div>
+            </div>
+            <div class="faq-card animate fade-right stagger-2">
+                <div class="faq-question">❓ How to order?</div>
+                <div class="faq-answer">Easy! Choose your flavor → Select quantity → Pay online via Razorpay or order via WhatsApp. We'll confirm & deliver within 24 hours across India.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials animate">
+    <div class="testimonials-badge">
+        <span class="badge-icon">⭐</span>
+        <span class="badge-text"><span id="review-count">1050</span>+ Reviews</span>
+    </div>
+    <div class="container">
+        <h2>Customer Love ❤️</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card animate fade-left stagger-1">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"Amazing taste and texture! Delivered fresh within 24 hours. Highly recommend!"</p>
+                <span class="customer-name">- Priya S., Mumbai</span>
+            </div>
+            <div class="testimonial-card animate fade-right stagger-2">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"Best poda I've had! The dry fruit version is absolutely delicious. Great service!"</p>
+                <span class="customer-name">- Rajesh K., Bangalore</span>
+            </div>
+            <div class="testimonial-card animate fade-left stagger-3">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"Perfect for gifting! Beautiful packaging and authentic taste. Will definitely order again."</p>
+                <span class="customer-name">- Anjali M., Delhi</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="newsletter animate">
+    <div class="container">
+        <div class="newsletter-content">
+            <h2>Get Fresh Updates! 📬</h2>
+            <p>Subscribe for exclusive offers, new flavours & special discounts</p>
+            <form class="newsletter-form" onsubmit="handleNewsletterSignup(event)">
+                <input type="email" placeholder="Enter your email" required style="padding:12px 16px;border:none;border-radius:8px;flex:1;font-size:1rem;">
+                <button type="submit" class="btn">Subscribe</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact animate">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <div class="contact-wrapper">
+        <div class="contact-info">
+            <h3>Quick Contact</h3>
+            <div class="contact-item">
+                <span class="contact-label">📞 WhatsApp</span>
+                <a href="https://wa.me/919876543210" target="_blank" class="contact-link">+91 98765 43210</a>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">✉️ Email</span>
+                <a href="mailto:info@poda-bites.com" class="contact-link">info@poda-bites.com</a>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">🕐 Support</span>
+                <span class="contact-value">24/7 Available</span>
+            </div>
+            <button class="btn btn-lg" onclick="location.href='https://wa.me/919876543210'" style="width:100%;margin-top:24px;">💬 Chat on WhatsApp</button>
+        </div>
+        <div class="contact-form-wrapper">
+            <h3>Send us a Message</h3>
+            <form class="contact-form" onsubmit="handleContactForm(event)">
+                <input type="text" placeholder="Your Name" required style="padding:12px 16px;border:1.5px solid rgba(0,0,0,0.1);border-radius:10px;flex:1;font-size:1rem;margin-bottom:12px;">
+                <input type="email" placeholder="Your Email" required style="padding:12px 16px;border:1.5px solid rgba(0,0,0,0.1);border-radius:10px;flex:1;font-size:1rem;margin-bottom:12px;">
+                <textarea placeholder="Your Message" required style="padding:12px 16px;border:1.5px solid rgba(0,0,0,0.1);border-radius:10px;flex:1;font-size:1rem;min-height:120px;margin-bottom:12px;resize:vertical;"></textarea>
+                <button type="submit" class="btn btn-lg" style="width:100%;">Send Message</button>
+            </form>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- Order History Modal -->
+<div id="orders-modal" class="modal" style="display:none;">
+    <div class="modal-overlay" onclick="closeOrdersModal()"></div>
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Order History</h2>
+            <button class="modal-close" onclick="closeOrdersModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p id="orders-empty">No orders yet.</p>
+            <ul id="orders-list"></ul>
+        </div>
+        <div class="modal-footer">
+            <button id="clear-orders" class="btn">Clear Order History</button>
+        </div>
+    </div>
+</div>
+
+<!-- Shopping Cart Modal -->
+<div id="cart-modal" class="modal" style="display:none;">
+    <div class="modal-overlay" onclick="closeCartModal()"></div>
+    <div class="modal-content modal-lg">
+        <div class="modal-header">
+            <h2>Shopping Cart</h2>
+            <button class="modal-close" onclick="closeCartModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div id="cart-empty" class="cart-empty">
+                <div class="empty-icon">🛒</div>
+                <p>Your cart is empty</p>
+                <p class="empty-desc">Start adding items to begin your order</p>
+                <button class="btn btn-lg" onclick="location.href='#products'; closeCartModal();">Browse Products</button>
+            </div>
+            <div id="cart-items" class="cart-items" style="display:none;"></div>
+        </div>
+        <div id="cart-summary" class="cart-summary" style="display:none;">
+            <div class="summary-row">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">₹0</span>
+            </div>
+            <div class="summary-row">
+                <span>Shipping:</span>
+                <span id="cart-shipping">FREE</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total:</span>
+                <span id="cart-total">₹0</span>
+            </div>
+            <button class="btn btn-lg" style="width:100%;margin-top:20px;" onclick="proceedToCheckout();">Proceed to Checkout</button>
+            <button class="btn btn-ghost" style="width:100%;margin-top:12px;" onclick="closeCartModal();">Continue Shopping</button>
+        </div>
+    </div>
+</div>
+
+<!-- Admin Panel Modal -->
+<div id="admin-modal" class="modal" style="display:none;">
+    <div class="modal-overlay" onclick="closeAdminPanel()"></div>
+    <div class="modal-content modal-xl">
+        <div class="modal-header">
+            <h2>Admin Panel</h2>
+            <button class="modal-close" onclick="closeAdminPanel()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="admin-tabs">
+                <button class="admin-tab active" onclick="switchAdminTab('dashboard')">📊 Dashboard</button>
+                <button class="admin-tab" onclick="switchAdminTab('products')">📦 Products</button>
+                <button class="admin-tab" onclick="switchAdminTab('orders')">🧾 Orders</button>
+                <button class="admin-tab" onclick="switchAdminTab('settings')">⚙️ Settings</button>
+            </div>
+
+            <div id="admin-dashboard" class="admin-tab-content active">
+                <h3>Business Overview</h3>
+                <div class="admin-stats">
+                    <div class="admin-stat-card">
+                        <span class="stat-label">Total Orders</span>
+                        <span class="stat-value" id="stat-orders">0</span>
+                    </div>
+                    <div class="admin-stat-card">
+                        <span class="stat-label">Total Revenue</span>
+                        <span class="stat-value" id="stat-revenue">₹0</span>
+                    </div>
+                    <div class="admin-stat-card">
+                        <span class="stat-label">Customers</span>
+                        <span class="stat-value" id="stat-customers">0</span>
+                    </div>
+                    <div class="admin-stat-card">
+                        <span class="stat-label">Pending Orders</span>
+                        <span class="stat-value" id="stat-pending">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="admin-products" class="admin-tab-content" style="display:none;">
+                <h3>Manage Products</h3>
+                <div class="admin-form">
+                    <input type="text" placeholder="Product Name" id="prod-name" style="margin-bottom:12px;padding:12px;border:1.5px solid rgba(0,0,0,0.1);border-radius:10px;width:100%;font-size:1rem;">
+                    <input type="number" placeholder="Price" id="prod-price" style="margin-bottom:12px;padding:12px;border:1.5px solid rgba(0,0,0,0.1);border-radius:10px;width:100%;font-size:1rem;">
+                    <textarea placeholder="Description" id="prod-desc" style="margin-bottom:12px;padding:12px;border:1.5px solid rgba(0,0,0,0.1);border-radius:10px;width:100%;font-size:1rem;min-height:80px;resize:vertical;"></textarea>
+                    <button class="btn btn-lg" style="width:100%;" onclick="addNewProduct();">Add Product</button>
+                </div>
+                <div id="admin-products-list" style="margin-top:24px;"></div>
+            </div>
+
+            <div id="admin-orders" class="admin-tab-content" style="display:none;">
+                <h3>Recent Orders</h3>
+                <div id="admin-orders-list" style="max-height:400px;overflow-y:auto;"></div>
+            </div>
+
+            <div id="admin-settings" class="admin-tab-content" style="display:none;">
+                <h3>Store Settings</h3>
+                <div class="admin-form">
+                    <label>WhatsApp Number</label>
+                    <input type="text" id="setting-whatsapp" placeholder="+91 98765 43210" style="margin-bottom:20px;padding:12px;border:1.5px solid rgba(0,0,0,0.1);border-radius:10px;width:100%;font-size:1rem;">
+                    
+                    <label>Email</label>
+                    <input type="email" id="setting-email" placeholder="info@poda-bites.com" style="margin-bottom:20px;padding:12px;border:1.5px solid rgba(0,0,0,0.1);border-radius:10px;width:100%;font-size:1rem;">
+                    
+                    <label>Free Shipping Above</label>
+                    <input type="number" id="setting-shipping" placeholder="500" style="margin-bottom:20px;padding:12px;border:1.5px solid rgba(0,0,0,0.1);border-radius:10px;width:100%;font-size:1rem;">
+                    
+                    <button class="btn btn-lg" style="width:100%;" onclick="saveSettings();">Save Settings</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>📍 Poda Bites</h4>
+                <p>Authentic caramelized baked dessert</p>
+                <p class="footer-meta">Fresh daily • Delivered with love</p>
+            </div>
+            <div class="footer-section">
+                <h4>🔗 Quick Links</h4>
+                <ul>
+                    <li><a href="#products">Our Products</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>📞 Connect</h4>
+                <ul>
+                    <li><a href="https://wa.me/919876543210">WhatsApp: +91 98765 43210</a></li>
+                    <li><a href="mailto:info@poda-bites.com">Email: info@poda-bites.com</a></li>
+                    <li>🕐 24/7 Support Available</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Poda Bites. All rights reserved. 🍰</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Main site script -->
+<script src="script.js" defer></script>
+
+</body>
+</html>
